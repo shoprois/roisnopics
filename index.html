@@ -38,39 +38,31 @@
   <section id="collection" class="py-40 px-8 max-w-7xl mx-auto">
     <h2 class="text-sm tracking-[0.4em] uppercase text-stone-400 mb-6">Collection 01</h2>
 
-    <!-- Collection Subtabs -->
-    <div class="flex flex-wrap gap-10 mb-16 text-xs tracking-[0.35em] uppercase">
-      <button onclick="showLine('void')" class="tab-btn text-red-600">VOID//001</button>
-      <button onclick="showLine('raw')" class="tab-btn text-stone-400 hover:text-red-600 transition">RAW//002</button>
-      <button onclick="showLine('static')" class="tab-btn text-stone-400 hover:text-red-600 transition">STATIC//003</button>
-      <button onclick="showLine('blunt')" class="tab-btn text-stone-400 hover:text-red-600 transition">BLUNT//004</button>
-    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="group">
+        <div class="h-[420px] bg-black mb-6 flex items-center justify-center">
+          <img src="https://i.imgur.com/UqjFMfN.jpeg" alt="ROIS Foundation Tee" class="w-full h-full object-contain" />
+        </div>
+        <p class="text-sm tracking-wide">Foundation Tee</p>
+        <p class="text-xs text-stone-500 mt-2">Left chest print · white ink</p>
+      </div>
 
-    <h2 class="hidden">-[0.4em] uppercase text-stone-400 mb-16">Collection 01</h2>
-    <!-- VOID//001 -->
-    <div id="void" class="line grid grid-cols-1 md:grid-cols-3 gap-16">
-      <div class="group"><div class="h-[420px] bg-black mb-6 flex items-center justify-center"><img src="https://i.imgur.com/UqjFMfN.jpeg" class="w-full h-full object-contain" /></div><p class="text-sm">Foundation Tee</p></div>
-      <div class="group"><div class="h-[420px] bg-black mb-6 flex items-center justify-center"><img src="https://i.imgur.com/V0u0jqM.jpeg" class="w-full h-full object-contain" /></div><p class="text-sm">Void//001 Tee</p></div>
-      <div class="group"><div class="h-[420px] bg-black mb-6 flex items-center justify-center"><img src="https://i.imgur.com/TdUxtqS.jpeg" class="w-full h-full object-contain" /></div><p class="text-sm">Raw//002 Beanie</p></div>
-    </div>
+      <div class="group">
+        <div class="h-[420px] bg-black mb-6 flex items-center justify-center">
+          <img src="https://i.imgur.com/V0u0jqM.jpeg" alt="ROIS Void 001 Tee" class="w-full h-full object-contain" />
+        </div>
+        <p class="text-sm tracking-wide">Void//001 Tee</p>
+        <p class="text-xs text-stone-500 mt-2">Back graphic · red accent</p>
+      </div>
 
-    <!-- RAW//002 -->
-    <div id="raw" class="line hidden grid grid-cols-1 md:grid-cols-3 gap-16">
-      <div class="h-[420px] bg-black"></div>
-      <div class="h-[420px] bg-black"></div>
-      <div class="h-[420px] bg-black"></div>
+      <div class="group">
+        <div class="h-[420px] bg-black mb-6 flex items-center justify-center">
+          <img src="https://i.imgur.com/TdUxtqS.jpeg" alt="ROIS Raw 002 Beanie" class="w-full h-full object-contain" />
+        </div>
+        <p class="text-sm tracking-wide">Raw//002 Beanie</p>
+        <p class="text-xs text-stone-500 mt-2">Sunflower yellow embroidery</p>
+      </div>
     </div>
-
-    <!-- STATIC//003 -->
-    <div id="static" class="line hidden grid grid-cols-1 md:grid-cols-3 gap-16">
-      <div class="h-[420px] bg-black"></div>
-      <div class="h-[420px] bg-black"></div>
-      <div class="h-[420px] bg-black"></div>
-    </div>
-
-    <!-- BLUNT//004 -->
-    <div id="blunt" class="line hidden grid grid-cols-1 md:grid-cols-3 gap-16">
-      <div class="h-[420px] bg-black"></div>
       <div class="h-[420px] bg-black"></div>
       <div class="h-[420px] bg-black"></div>
     </div>
@@ -134,14 +126,6 @@
     </div>
   </footer>
 
-<script>
-  function showLine(line) {
-    document.querySelectorAll('.line').forEach(l => l.classList.add('hidden'));
-    document.getElementById(line).classList.remove('hidden');
 
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('text-red-600'));
-    event.target.classList.add('text-red-600');
-  }
-</script>
 </body>
 </html>
