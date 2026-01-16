@@ -9,9 +9,9 @@
 <body class="bg-black text-stone-200 antialiased">
 
   <!-- Minimal Nav -->
-  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-10 py-5 bg-black/80 backdrop-blur">
+  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-6 bg-black/80 backdrop-blur">
     <span class="text-sm tracking-widest">ROIS</span>
-    <div class="hidden md:flex gap-10 text-xs tracking-widest uppercase">
+    <div class="flex gap-10 text-xs tracking-widest uppercase">
       <a href="#collection" class="hover:text-red-600 transition">Collection</a>
       <a href="#lookbook" class="hover:text-red-600 transition">Lookbook</a>
       <a href="#about" class="hover:text-red-600 transition">About</a>
@@ -19,10 +19,10 @@
   </nav>
 
   <!-- Hero -->
-  <section class="min-h-screen flex items-center justify-center text-center px-6 pt-24">
+  <section class="h-screen flex items-center justify-center text-center px-6">
     <div>
       <p class="mb-6 text-xs tracking-[0.4em] uppercase text-stone-400">Established Silence</p>
-      <h1 class="text-5xl md:text-[6rem] font-light tracking-[0.35em] leading-none">
+      <h1 class="text-7xl md:text-[6rem] font-light tracking-[0.35em] leading-none">
         RO<span class="text-red-600 font-extralight">IS</span>
       </h1>
       <p class="mt-8 text-lg text-stone-400 max-w-xl mx-auto">
@@ -35,136 +35,36 @@
   </section>
 
   <!-- Collection -->
-  <section id="collection" class="py-28 md:py-40 px-6 md:px-8 max-w-7xl mx-auto">
-    <h2 class="text-sm tracking-[0.4em] uppercase text-stone-400 mb-12">Collection 01</h2>
+  <section id="collection" class="py-40 px-8 max-w-7xl mx-auto">
+    <h2 class="text-sm tracking-[0.4em] uppercase text-stone-400 mb-16">Collection 01</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
 
-    <!-- Tees -->
-    <h3 class="hidden md:block text-xs tracking-[0.4em] uppercase text-stone-500 mb-10">Tees</h3>
-
-    <!-- Tees (Collapsible on Mobile) -->
-    <div class="md:hidden mb-6">
-      <button onclick="document.getElementById('tees').classList.toggle('hidden')" class="w-full flex justify-between items-center text-xs tracking-[0.4em] uppercase text-stone-400">
-        Tees <span>+</span>
-      </button>
-    </div>
-    <div id="tees" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 mb-32 md:block hidden">
-
-      <!-- Foundation Tee -->
+      <!-- Graphic Tee: Foundation -->
       <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <img src="https://i.imgur.com/UqjFMfN.jpeg" alt="ROIS Foundation Tee" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+        <div class="h-[420px] bg-black mb-6 flex items-center justify-center">
+          <img src="https://i.imgur.com/UqjFMfN.jpeg" alt="ROIS Foundation Tee" class="w-full h-full object-contain" />
         </div>
-        <p class="text-sm tracking-wide">Foundation//000 Tee</p>
+        <p class="text-sm tracking-wide">Foundation Tee</p>
         <p class="text-xs text-stone-500 mt-2">Left chest print · white ink</p>
-        <div class="flex gap-2 mt-3 items-center">
-          <span class="w-3 h-3 rounded-full bg-stone-300" title="Stone"></span>
-          <span class="w-3 h-3 rounded-full bg-olive-700" title="Olive"></span>
-          <span class="w-3 h-3 rounded-full bg-slate-700" title="Navy"></span>
-          <span class="relative w-3 h-3 rounded-full bg-amber-900" title="Brown">
-            <span class="absolute -top-4 -left-2 text-[8px] tracking-widest text-red-600">LIMITED</span>
-          </span>
-        </div>
       </div>
 
-      <!-- Void//001 Tee -->
+      <!-- Graphic Tee: Void//001 -->
       <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <img src="https://i.imgur.com/V0u0jqM.jpeg" alt="ROIS Void 001 Tee" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+        <div class="h-[420px] bg-black mb-6 flex items-center justify-center">
+          <img src="https://i.imgur.com/V0u0jqM.jpeg" alt="ROIS Void 001 Tee" class="w-full h-full object-contain" />
         </div>
         <p class="text-sm tracking-wide">Void//001 Tee</p>
         <p class="text-xs text-stone-500 mt-2">Back graphic · red accent</p>
-        <div class="flex gap-2 mt-3">
-          <span class="w-3 h-3 rounded-full bg-black"></span>
-          <span class="w-3 h-3 rounded-full bg-white border border-stone-400"></span>
-          <span class="w-3 h-3 rounded-full bg-slate-700"></span>
-          <span class="w-3 h-3 rounded-full bg-olive-700"></span>
-        </div>
       </div>
 
-    </div>
-
-    <!-- Shorts -->
-    <h3 class="hidden md:block text-xs tracking-[0.4em] uppercase text-stone-500 mb-10">Bottoms</h3>
-
-    <!-- Shorts (Collapsible on Mobile) -->
-    <div class="md:hidden mb-6">
-      <button onclick="document.getElementById('shorts').classList.toggle('hidden')" class="w-full flex justify-between items-center text-xs tracking-[0.4em] uppercase text-stone-400">
-        Bottoms <span>+</span>
-      </button>
-    </div>
-    <div id="shorts" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 mb-32 md:block hidden">
-
-      <!-- Shorts Placeholder -->
+      <!-- Beanie: Raw//002 -->
       <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <span class="text-xs tracking-widest text-stone-500">Coming Soon</span>
-        </div>
-        <p class="text-sm tracking-wide">Utility Short//010</p>
-        <p class="text-xs text-stone-500 mt-2">Relaxed fit · heavy cotton</p>
-        <div class="flex gap-2 mt-3">
-          <span class="w-3 h-3 rounded-full bg-black" title="Black"></span>
-          <span class="w-3 h-3 rounded-full bg-amber-200" title="Tan"></span>
-          <span class="w-3 h-3 rounded-full bg-olive-700" title="Olive"></span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Beanies -->
-    <h3 class="hidden md:block text-xs tracking-[0.4em] uppercase text-stone-500 mb-10">Headwear</h3>
-
-    <!-- Beanies (Collapsible on Mobile) -->
-    <div class="md:hidden mb-6">
-      <button onclick="document.getElementById('beanies').classList.toggle('hidden')" class="w-full flex justify-between items-center text-xs tracking-[0.4em] uppercase text-stone-400">
-        Headwear <span>+</span>
-      </button>
-    </div>
-    <div id="beanies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 mb-32 md:block hidden">
-
-      <!-- Raw//002 Beanie -->
-      <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <img src="https://i.imgur.com/TdUxtqS.jpeg" alt="ROIS Raw 002 Beanie" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+        <div class="h-[420px] bg-black mb-6 flex items-center justify-center">
+          <img src="https://i.imgur.com/TdUxtqS.jpeg" alt="ROIS Raw 002 Beanie" class="w-full h-full object-contain" />
         </div>
         <p class="text-sm tracking-wide">Raw//002 Beanie</p>
         <p class="text-xs text-stone-500 mt-2">Sunflower yellow embroidery</p>
-        <div class="flex gap-2 mt-3">
-          <span class="w-3 h-3 rounded-full bg-black"></span>
-          <span class="w-3 h-3 rounded-full bg-white border border-stone-400"></span>
-          <span class="w-3 h-3 rounded-full bg-slate-700"></span>
-          <span class="w-3 h-3 rounded-full bg-olive-700"></span>
-        </div>
       </div>
-
-    </div>
-
-    <!-- Hoodies -->
-
-    <!-- Hoodies (Collapsible on Mobile) -->
-    <div class="md:hidden mb-6">
-      <button onclick="document.getElementById('hoodies').classList.toggle('hidden')" class="w-full flex justify-between items-center text-xs tracking-[0.4em] uppercase text-stone-400">
-        Hoodies <span>+</span>
-      </button>
-    </div>
-    <h3 class="hidden md:block text-xs tracking-[0.4em] uppercase text-stone-500 mb-10">Hoodies</h3>
-    <div id="hoodies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 md:block hidden">
-
-      <!-- Hoodie 01 -->
-      <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <span class="absolute top-4 left-4 text-[10px] tracking-widest border border-red-600 text-red-600 px-3 py-1">NEW</span>
-          <img src="https://i.imgur.com/njXK0t2.jpeg" alt="ROIS Foundation University Hoodie" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <p class="text-sm tracking-wide">Foundation University Hoodie</p>
-        <p class="text-xs text-stone-500 mt-2">Stone · Olive · Navy</p>
-        <div class="flex gap-2 mt-3">
-          <span class="w-3 h-3 rounded-full bg-stone-300"></span>
-          <span class="w-3 h-3 rounded-full bg-olive-700"></span>
-          <span class="w-3 h-3 rounded-full bg-slate-700"></span>
-        </div>
-      </div>
-
-      
 
     </div>
   </section>
@@ -172,20 +72,20 @@
   <!-- Lookbook -->
   <!-- Lookbook -->
   <!-- Lookbook -->
-  <section id="lookbook" class="py-28 md:py-40 bg-stone-950 px-6 md:px-8">
+  <section id="lookbook" class="py-40 bg-stone-950 px-8">
     <h2 class="text-center text-sm tracking-[0.4em] uppercase text-stone-400 mb-20">Lookbook</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-7xl mx-auto">
-      <div class="w-full h-[420px] md:h-[700px] bg-black flex items-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-7xl mx-auto">
+      <div class="w-full h-[700px] bg-black flex items-center justify-center">
         <img src="https://i.imgur.com/2UBf1pS.jpg" alt="ROIS lookbook model beanie" class="w-full h-full object-contain block" />
       </div>
-      <div class="w-full h-[420px] md:h-[700px] bg-black flex items-center justify-center">
+      <div class="w-full h-[700px] bg-black flex items-center justify-center">
         <img src="https://i.imgur.com/avV7ISX.png" alt="ROIS lookbook model streetwear" class="w-full h-full object-contain block" />
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-28 md:py-40 px-6 md:px-8">
+  <section id="about" class="py-40 px-8">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-sm tracking-[0.4em] uppercase text-stone-400 mb-10">About ROIS</h2>
       <p class="text-lg leading-relaxed text-stone-300">
@@ -195,13 +95,14 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-16 md:py-20 border-t border-stone-800 text-center">
+  <footer class="py-20 border-t border-stone-800 text-center">
     <p class="text-sm tracking-widest">ROIS</p>
     <p class="text-xs text-stone-500 mt-4">© 2026 ROIS. All rights reserved.</p>
-    <div class="flex justify-center gap-10 mt-8 text-xs tracking-widest uppercase">$1</div>
-    <p class="mt-6 text-xs text-stone-500">shoprois@outlook.com</p>
+    <div class="flex justify-center gap-10 mt-8 text-xs tracking-widest uppercase">
+      <a href="#" class="hover:text-red-600 transition">Instagram</a>
+      <a href="#" class="hover:text-red-600 transition">Contact</a>
+    </div>
   </footer>
-
 
 </body>
 </html>
