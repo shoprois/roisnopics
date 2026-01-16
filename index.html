@@ -5,6 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROIS — Streetwear</title>
   <script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Hero glow pulse */
+@keyframes glowPulse {
+  0%,100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 35%, rgba(255,255,255,0.25) 55%, rgba(0,0,0,0) 70%);
+  animation: glowPulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Grain overlay */
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Fade to black transition */
+.fade-to-black {
+  position: relative;
+}
+.fade-to-black::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,1));
+  z-index: 5;
+}
+</style>
 </head>
 <body class="bg-black text-stone-200 antialiased">
 
@@ -19,20 +59,23 @@
   </nav>
 
   <!-- Hero -->
-  <section class="min-h-screen flex items-center justify-center text-center px-6 pt-24">
-    <div>
-      <p class="mb-6 text-xs tracking-[0.4em] uppercase text-stone-400">Established Silence</p>
+  <section class="min-h-screen flex items-center justify-center text-center px-6 pt-24 relative overflow-hidden bg-white hero-glow">
+    <!-- Glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.6)_35%,rgba(255,255,255,0.2)_55%,rgba(0,0,0,0)_70%)]"></div>
+    <div class="relative z-10 text-black">
+      <p class="mb-6 text-xs tracking-[0.4em] uppercase text-stone-500">Established Silence</p>
       <h1 class="text-5xl md:text-[6rem] font-light tracking-[0.35em] leading-none">
         RO<span class="text-red-600 font-extralight">IS</span>
       </h1>
-      <p class="mt-8 text-lg text-stone-400 max-w-xl mx-auto">
+      <p class="mt-8 text-lg text-stone-600 max-w-xl mx-auto">
         Modern uniforms shaped by restraint, intention, and quiet rebellion.
       </p>
-      <a href="#collection" class="inline-block mt-14 px-14 py-5 border border-stone-600 text-xs tracking-[0.4em] uppercase hover:border-red-600 hover:text-red-600 transition">
+      <a href="#collection" class="inline-block mt-14 px-14 py-5 border border-stone-400 text-xs tracking-[0.4em] uppercase hover:border-red-600 hover:text-red-600 transition">
         View Collection
       </a>
     </div>
   </section>
+  <div class="fade-to-black"></div>
 
   <!-- Collection -->
   <section id="collection" class="py-28 md:py-40 px-6 md:px-8 max-w-7xl mx-auto">
@@ -55,6 +98,15 @@
           <img src="https://i.imgur.com/UqjFMfN.jpeg" alt="ROIS Foundation Tee" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
         </div>
         <p class="text-sm tracking-wide">Foundation//000 Tee</p>
+        <p class="text-xs mt-1">$1
+        <div class="flex gap-2 mt-3">
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">S</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">M</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">L</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">XL</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">2X</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">3X</button>
+</div>
         <p class="text-xs text-stone-500 mt-2">Left chest print · white ink</p>
         <div class="flex gap-2 mt-3 items-center">
           <span class="w-3 h-3 rounded-full bg-stone-300" title="Stone"></span>
@@ -66,12 +118,16 @@
         </div>
       </div>
 
-      <!-- Void//001 Tee -->
-      <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <img src="https://i.imgur.com/V0u0jqM.jpeg" alt="ROIS Void 001 Tee" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <p class="text-sm tracking-wide">Void//001 Tee</p>
+      <!-- Void//001 Tee</p>
+        <p class="text-xs mt-1">$1
+        <div class="flex gap-2 mt-3">
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">S</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">M</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">L</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">XL</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">2X</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">3X</button>
+</div>
         <p class="text-xs text-stone-500 mt-2">Back graphic · red accent</p>
         <div class="flex gap-2 mt-3">
           <span class="w-3 h-3 rounded-full bg-black"></span>
@@ -100,6 +156,15 @@
           <span class="text-xs tracking-widest text-stone-500">Coming Soon</span>
         </div>
         <p class="text-sm tracking-wide">Utility Short//010</p>
+        <p class="text-xs mt-1">$1
+        <div class="flex gap-2 mt-3">
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">S</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">M</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">L</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">XL</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">2X</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">3X</button>
+</div>
         <p class="text-xs text-stone-500 mt-2">Relaxed fit · heavy cotton</p>
         <div class="flex gap-2 mt-3">
           <span class="w-3 h-3 rounded-full bg-black" title="Black"></span>
@@ -121,12 +186,8 @@
     </div>
     <div id="beanies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 mb-32 md:block hidden">
 
-      <!-- Raw//002 Beanie -->
-      <div class="group">
-        <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
-          <img src="https://i.imgur.com/TdUxtqS.jpeg" alt="ROIS Raw 002 Beanie" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <p class="text-sm tracking-wide">Raw//002 Beanie</p>
+      <!-- Raw//002 Beanie</p>
+        <p class="text-xs mt-1">$20 USD</p>
         <p class="text-xs text-stone-500 mt-2">Sunflower yellow embroidery</p>
         <div class="flex gap-2 mt-3">
           <span class="w-3 h-3 rounded-full bg-black"></span>
@@ -153,9 +214,16 @@
       <div class="group">
         <div class="relative h-[420px] bg-black mb-6 flex items-center justify-center overflow-hidden">
           <span class="absolute top-4 left-4 text-[10px] tracking-widest border border-red-600 text-red-600 px-3 py-1">NEW</span>
-          <img src="https://i.imgur.com/njXK0t2.jpeg" alt="ROIS Foundation University Hoodie" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <p class="text-sm tracking-wide">Foundation University Hoodie</p>
+          <img src="https://i.imgur.com/njXK0t2.jpeg" alt="ROIS Foundation University Hoodie</p>
+        <p class="text-xs mt-1">$1
+        <div class="flex gap-2 mt-3">
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">S</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">M</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">L</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">XL</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">2X</button>
+  <button class="w-8 h-8 rounded-full border border-red-600 text-red-600 text-[10px] tracking-widest hover:bg-red-600 hover:text-black transition">3X</button>
+</div>
         <p class="text-xs text-stone-500 mt-2">Stone · Olive · Navy</p>
         <div class="flex gap-2 mt-3">
           <span class="w-3 h-3 rounded-full bg-stone-300"></span>
@@ -198,7 +266,10 @@
   <footer class="py-16 md:py-20 border-t border-stone-800 text-center">
     <p class="text-sm tracking-widest">ROIS</p>
     <p class="text-xs text-stone-500 mt-4">© 2026 ROIS. All rights reserved.</p>
-    <div class="flex justify-center gap-10 mt-8 text-xs tracking-widest uppercase">$1</div>
+    <div class="flex justify-center gap-10 mt-8 text-xs tracking-widest uppercase">
+      <a href="https://www.instagram.com/RoisCollective" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition">Instagram</a>
+      <a href="mailto:shoprois@outlook.com" class="hover:text-red-600 transition">Contact</a>
+    </div>
     <p class="mt-6 text-xs text-stone-500">shoprois@outlook.com</p>
   </footer>
 
